@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../static/css/global.css">
+    <title>Interactive ML Data Explorer</title>
+</head>
+<body>
+    
+    <!-- User instruction -->
+    <div id="pageIntroDiv">
+        <h1>Interactive ML Data Explorer</h1>
+        <p>Upload a CSV file and either have a prediction formulated or optimize based on constraints</p>
+    </div>
+
+    <!--User uploads file first-->
+    <div id="uploadFileDiv">
+        <label for="userFile">Choose a PREPROCESSED CSV file: </label>
+        <input id="userFile" name="userFile" type="file" accept=".csv">
+        
+    </div>
+
+    <!--Form-->
+    <div id="formDiv">
+        <form id="userForm" action="/submit">
+
+            <div id="indepVarDiv"></div>
+            <div id="depenVarDiv"></div>
+
+            <div id="modelSelectDiv"></div>
+
+            <div id="indepConstraintDiv"></div>
+            <div id="depenConstraintDiv"></div>
+
+            <button id="submitFileBtn">Submit Form!</button>
+
+        </form> 
+    </div>
+    
+    
+
+    <!-- Plotly Graph -->
+    <div id="plotlyGraphContainer">
+        <div id="plotlyGraph"></div>
+    </div>
+    <!---->
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/p5.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.4.0/addons/p5.dom.js"></script>
+    <script src="../static/js/global.js"></script>
+    <script src="https://cdn.plot.ly/plotly-3.4.0.min.js"></script> 
+</body>
+</html>

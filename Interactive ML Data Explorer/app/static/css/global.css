@@ -1,0 +1,150 @@
+/* =========================
+   THEME VARIABLES
+   ========================= */
+:root {
+  /* Core */
+  --bg: #0e1117;
+  --surface: #161b22;
+  --surface-soft: #1f2933;
+
+  /* Text */
+  --text-primary: #e6edf3;
+  --text-secondary: #9da7b3;
+  --text-muted: #6b7280;
+
+  /* Accent colors (use sparingly) */
+  --accent-green: #00ff85;
+  --accent-blue: #5da9ff;
+  --accent-purple: #b38cff;
+  --accent-yellow: #ffd166;
+
+  /* UI */
+  --border: #2b3440;
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+
+  --focus-ring: 0 0 0 3px rgba(93, 169, 255, 0.35);
+}
+
+/* =========================
+   GLOBAL
+   ========================= */
+body {
+  background-color: var(--bg);
+  color: var(--text-primary);
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  line-height: 1.6;
+  margin: 1rem;
+}
+
+/* =========================
+   TEXT
+   ========================= */
+p,
+ul {
+  color: var(--text-primary);
+  max-width: 75ch; /* prevents eye fatigue */
+}
+
+p {
+  margin-bottom: 1rem;
+}
+
+ul {
+  padding-left: 1.2rem;
+}
+
+li {
+  margin: 0.35rem 0;
+}
+
+/* =========================
+   HEADINGS
+   ========================= */
+h1 {
+  margin: 0.75rem 0;
+  padding: 0.75rem;
+  background: linear-gradient(
+    90deg,
+    rgba(93, 169, 255, 0.15),
+    rgba(179, 140, 255, 0.15)
+  );
+  color: var(--text-primary);
+  border-radius: var(--radius-md);
+  text-align: center;
+  font-weight: 700;
+}
+
+h2 {
+  margin-top: 2rem;
+  color: var(--accent-blue);
+  border-left: 4px solid var(--accent-blue);
+  padding-left: 0.6rem;
+}
+
+/* =========================
+   TABLES
+   ========================= */
+table {
+  width: 100%;
+  margin: 1rem 0;
+  background-color: var(--surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--surface-soft);
+  color: var(--accent-yellow);
+  font-weight: 600;
+  text-align: left;
+}
+
+th,
+td {
+  padding: 12px 14px;
+  border-bottom: 1px solid var(--border);
+}
+
+tr:hover td {
+  background-color: rgba(93, 169, 255, 0.06);
+}
+
+/* =========================
+   BUTTONS
+   ========================= */
+button {
+  appearance: none;
+  border: none;
+  border-radius: var(--radius-sm);
+  padding: 0.6rem 1rem;
+
+  background-color: var(--surface-soft);
+  color: var(--text-primary);
+
+  font-family: "JetBrains Mono", monospace;
+  font-size: 15px;
+
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease, background-color 0.15s;
+}
+
+button:hover {
+  background-color: rgba(0, 255, 133, 0.12);
+  transform: translateY(-1px);
+}
+
+button:active {
+  transform: translateY(0);
+}
+
+button:focus-visible {
+  outline: none;
+  box-shadow: var(--focus-ring);
+}
+
+/* =========================
+   COLLAPSIBLE
+   ========================= */

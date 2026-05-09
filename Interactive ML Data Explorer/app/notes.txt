@@ -1,0 +1,88 @@
+
+# run_pipeline() <-> route_model() <-> run_regression() -> create_plotly graph()
+
+
+
+2. User Defines Problem
+    Select independent variables (X)
+    Select dependent variable (y)
+    Optional: define constraints (filters/ranges)
+3. Apply Constraints (Optional)
+    Filter dataset based on user rules e.g. age > 18 income between range
+    Update DataFrame after filtering
+4. Infer Problem Type
+    Check target variable (y)
+    If numeric → regression
+    If categorical → classification
+5. Feature Preprocessing
+    Split X into:
+        numerical features
+        categorical features
+    Apply transformations:
+        categorical → one-hot encoding
+        numerical → kept as-is (optionally scaled)
+6. Train-Test Split
+Split data into:
+    training set
+    testing set (e.g. 80/20)
+7. Model Training (AutoML Core Step)
+    If Classification:
+        Train multiple models:
+            Logistic Regression
+            Random Forest Classifier
+            (optional) SVM
+
+
+
+Evaluate each model:
+accuracy
+F1-score
+Select best-performing model
+If Regression:
+Train multiple models:
+Linear Regression
+Random Forest Regressor
+(optional) Ridge Regression
+Evaluate each model:
+RMSE
+MAE
+R²
+Select best-performing model
+8. Store Best Model
+Save:
+trained model
+preprocessing pipeline
+Optionally serialize model for reuse
+9. Generate Predictions
+Run model on test set
+Produce:
+predicted values (y_pred)
+comparison with true values (y_test)
+10. Visualization Decision Layer
+
+Based on:
+
+problem type
+number of features
+Regression visuals:
+actual vs predicted plot
+residual plot
+regression line (if 1 feature)
+Classification visuals:
+confusion matrix
+ROC curve (optional)
+decision boundary (if 2 features)
+High-dimensional data:
+PCA projection scatter plot
+11. Render Visualizations (Plotly)
+Convert plots into interactive HTML
+Display in Flask frontend
+12. Output to User
+
+Return:
+
+best model name
+performance metrics
+predictions
+visualizations
+(optional) model comparison table
